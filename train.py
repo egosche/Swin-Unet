@@ -11,13 +11,13 @@ from config import get_config
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--root_path', type=str,
-                    default='../data/Synapse/train_npz', help='root dir for data')
+                    default='datasets/Synapse/', help='root dir for data')
 parser.add_argument('--dataset', type=str,
                     default='Synapse', help='experiment_name')
 parser.add_argument('--list_dir', type=str,
                     default='./lists/lists_Synapse', help='list dir')
 parser.add_argument('--num_classes', type=int,
-                    default=9, help='output channel of network')
+                    default=7, help='output channel of network')
 parser.add_argument('--output_dir', type=str, help='output dir')                   
 parser.add_argument('--max_iterations', type=int,
                     default=30000, help='maximum epoch number to train')
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         'Synapse': {
             'root_path': args.root_path,
             'list_dir': './lists/lists_Synapse',
-            'num_classes': 9,
+            'num_classes': 7,
         },
     }
 
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
     net = ViT_seg(config, img_size=args.img_size, num_classes=args.num_classes).cuda()
-    net.load_from(config)
+    # net.load_from(config) Skip loading pre-trained weights
 
     trainer = {'Synapse': trainer_synapse,}
     trainer[dataset_name](args, net, args.output_dir)

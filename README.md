@@ -1,5 +1,8 @@
 # Swin-Unet
-The codes for the work "Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation"(https://arxiv.org/abs/2105.05537). A validation for U-shaped Swin Transformer. Our paper has been accepted by ECCV 2022 MEDICAL COMPUTER VISION WORKSHOP (https://mcv-workshop.github.io/). We updated the Reproducibility. I hope this will help you to reproduce the results.
+The code for the work "Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation"(https://arxiv.org/abs/2105.05537). A validation for U-shaped Swin Transformer.
+
+## About this fork
+This fork makes it possible to train and test the Swin-Unet with any image data.
 
 ## 1. Download pre-trained swin transformer model (Swin-T)
 * [Get pre-trained model in this link] (https://drive.google.com/drive/folders/1UC3XOoezeum0uck4KBVGa8osahs6rKUY?usp=sharing): Put pretrained Swin-T into folder "pretrained_ckpt/"
@@ -10,7 +13,7 @@ The codes for the work "Swin-Unet: Unet-like Pure Transformer for Medical Image 
 
 ## 3. Environment
 
-- Please prepare an environment with python=3.7, and then use the command "pip install -r requirements.txt" for the dependencies.
+- Please create a conda environment using the command ```conda env create --file=environment.yml```.
 
 ## 4. Train/Test
 
