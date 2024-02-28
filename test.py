@@ -17,11 +17,11 @@ from config import get_config
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--volume_path', type=str,
-                    default='../data/Synapse/test_vol_h5', help='root dir for validation volume data')  # for acdc volume_path=root_dir
+                    default='datasets/Synapse/', help='root dir for validation volume data')  # for acdc volume_path=root_dir
 parser.add_argument('--dataset', type=str,
                     default='Synapse', help='experiment_name')
 parser.add_argument('--num_classes', type=int,
-                    default=9, help='output channel of network')
+                    default=7, help='output channel of network')
 parser.add_argument('--list_dir', type=str,
                     default='./lists/lists_Synapse', help='list dir')
 parser.add_argument('--output_dir', type=str, help='output dir')   
@@ -103,7 +103,7 @@ if __name__ == "__main__":
             'Dataset': Synapse_dataset,
             'volume_path': args.volume_path,
             'list_dir': './lists/lists_Synapse',
-            'num_classes': 9,
+            'num_classes': 7,
             'z_spacing': 1,
         },
     }

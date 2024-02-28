@@ -152,3 +152,10 @@ configs/local/default.yaml
 
 # Aim logging
 .aim
+
+# SLURM
+slurm.sh
+swin*.out
+
+Model output
+output/
