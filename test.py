@@ -25,7 +25,7 @@ parser.add_argument('--num_classes', type=int,
 parser.add_argument('--list_dir', type=str,
                     default='./lists/lists_Synapse', help='list dir')
 parser.add_argument('--output_dir', type=str, help='output dir')   
-parser.add_argument('--max_iterations', type=int,default=30000, help='maximum epoch number to train')
+parser.add_argument('--max_iterations', type=int,default=30000, help='maximum iterations to train')
 parser.add_argument('--max_epochs', type=int, default=150, help='maximum epoch number to train')
 parser.add_argument('--batch_size', type=int, default=24,
                     help='batch_size per gpu')
@@ -119,6 +119,7 @@ if __name__ == "__main__":
 
     snapshot = os.path.join(args.output_dir, 'best_model.pth')
     if not os.path.exists(snapshot): snapshot = snapshot.replace('best_model', 'epoch_'+str(args.max_epochs-1))
+    if not os.path.exists(snapshot): snapshot = snapshot.replace('epoch_'+str(args.max_epochs-1), 'epoch_99')
     msg = net.load_state_dict(torch.load(snapshot))
     print("self trained swin unet",msg)
     snapshot_name = snapshot.split('/')[-1]
