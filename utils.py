@@ -86,7 +86,7 @@ def test_single_volume(image, label, net, classes, patch_size=[256, 256], test_s
             out = torch.argmax(torch.softmax(net(input), dim=1), dim=1).squeeze(0)
             prediction = out.cpu().detach().numpy()
     metric_list = []
-    for i in range(1, classes):
+    for i in range(classes):
         metric_list.append(calculate_metric_percase(prediction == i, label == i))
 
     if test_save_path is not None:

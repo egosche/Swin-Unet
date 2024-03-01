@@ -1,12 +1,12 @@
 #!/bin/bash -l
 
 # Default values
-EPOCH_TIME=150
+EPOCH_TIME=100
 OUT_DIR='./output'
 CFG='configs/swin_tiny_patch4_window7_224_lite.yaml'
 DATA_DIR='datasets/Synapse'
 LEARNING_RATE=0.05
-IMG_SIZE=224
+IMG_SIZE=64
 BATCH_SIZE=24
 
 # Check if variables are set and override defaults if needed
